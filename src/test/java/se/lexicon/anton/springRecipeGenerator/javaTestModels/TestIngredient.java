@@ -13,19 +13,19 @@ public class TestIngredient {
 	
 	@Before
 	public void setUp() {
-		testObject = new Ingredient(1, "Spam");
+		testObject = new Ingredient("Spam");
 	}
 	
 	@Test
 	public void test_created_success() {
 		assertNotNull(testObject);
-		assertEquals(1, testObject.getId());
+		assertEquals(0, testObject.getId());
 		assertEquals("Spam", testObject.getName());
 	}
 	
 	@Test
 	public void test_hashCode_and_equals() {
-		Ingredient copy = new Ingredient(1, "Spam");
+		Ingredient copy = new Ingredient(0, "Spam");
 		assertTrue(copy.equals(testObject));
 		assertEquals(copy.hashCode(), testObject.hashCode());
 	}
@@ -34,7 +34,7 @@ public class TestIngredient {
 	public void test_toString_contains_correct_information() {
 		String toString = testObject.toString();
 		assertTrue(
-				toString.contains("1") &&
+				toString.contains("0") &&
 				toString.contains("Spam")
 				);
 	}

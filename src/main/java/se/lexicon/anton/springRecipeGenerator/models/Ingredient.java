@@ -9,9 +9,15 @@ public class Ingredient {
 	
 	public Ingredient(int id, String name) {
 		this.id = id;
-		this.name = name;
+		setName(name);
 	}
 
+	public Ingredient(String name) {
+		this.name = name;
+	}
+	
+	public Ingredient() {}
+	
 	public String getName() {
 		return name;
 	}

@@ -7,17 +7,34 @@ public class Instruction {
 	private int id;
 	private String textContent;
 	
-	public Instruction(int id, String textContent) {
+	private Recipe owner;
+	
+	public Instruction(int id, String textContent, Recipe owner) {
 		this.id = id;
 		this.textContent = textContent;
+		this.owner = owner;
 	}
 
+	public Instruction(String textContent) {
+		setTextContent(textContent);
+	}
+	
+	public Instruction() {}
+	
 	public String getTextContent() {
 		return textContent;
 	}
 
 	public void setTextContent(String textContent) {
 		this.textContent = textContent;
+	}
+	
+	public Recipe getRecipe() {
+		return owner;
+	}
+
+	public void setRecipe(Recipe owner) {
+		this.owner = owner;
 	}
 
 	public int getId() {
